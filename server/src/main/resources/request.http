@@ -1,0 +1,88 @@
+# userSerivce
+### Get the user info
+GET http://localhost:8888/user/113fc78a-8a4c-4bba-bb5f-4cb305e1e04c
+
+### create user
+PUT http://localhost:8888/user
+Content-Type: application/json
+
+{
+  "username": "This string is blank",
+  "password": "This string isn't blank"
+}
+
+### Update user
+PATCH http://localhost:8888/user
+Content-Type: application/json
+
+{
+  "id": "113fc78a-8a4c-4bba-bb5f-4cb305e1e04c",
+  "username": "This string is blank",
+  "password": "This string isn't blank"
+}
+
+### User login
+PUT http://localhost:8888/user/state
+Content-Type: application/json
+
+{
+  "username": "This string is blank",
+  "password": "This string isn't blank"
+}
+
+### Get all the task-list of the user
+GET http://localhost:8888/user/113fc78a-8a4c-4bba-bb5f-4cb305e1e04c/list
+
+# listService
+### Get the list info
+GET http://localhost:8888/user/list/:id
+
+### Create a task-list of the user
+PUT http://localhost:8888/user/list
+Content-Type: application/json
+
+{
+  "userId": "113fc78a-8a4c-4bba-bb5f-4cb305e1e04c",
+  "title": "ponderum at ligula vulputate"
+}
+
+### Update the task-list
+PATCH http://localhost:8888/user/list
+Content-Type: application/json
+
+{
+  "id": "11ba483a-0f70-4ac2-b0ed-425ada46da65",
+  "title": "disputationi dico veritus prodesset"
+}
+
+### Delete the task-list
+DELETE http://localhost:8888/user/list/11ba483a-0f70-4ac2-b0ed-425ada46da65
+
+### Get all the tasks of the task-list
+GET http://localhost:8888/user/list/11ba483a-0f70-4ac2-b0ed-425ada46da65/tasks
+
+# taskServic
+### Get the task info
+GET http://localhost:8888/user/list/task/338c8889-706d-4f94-8161-3c01d636845a
+
+### Create a task for the task-list
+PUT http://localhost:8888/user/list/task
+Content-Type: application/json
+
+{
+  "userId": "113fc78a-8a4c-4bba-bb5f-4cb305e1e04c",
+  "listId": "11ba483a-0f70-4ac2-b0ed-425ada46da65",
+  "content": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam"
+}
+
+### Update the task
+PATCH http://localhost:8888/user/list/task
+Content-Type: application/json
+
+{
+  "id": "338c8889-706d-4f94-8161-3c01d636845a",
+  "content": "nominavi feugait melius sociis mi debet referrentur aptent alia ultrices"
+}
+
+### Delete the task
+DELETE http://localhost:8888/user/list/task/338c8889-706d-4f94-8161-3c01d636845a
